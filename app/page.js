@@ -101,7 +101,7 @@ export default function Home() {
           <span className="pill">Lifecycle AR, Envío Nube</span>
           <h1>Resultados: triggers de activación de Envío Nube</h1>
           <p className="lead">
-            Dos in-app que invitan a merchants que todavía no usan Envío Nube a activarlo, justo cuando agregan un
+            Campañas de Inapp que interceptan a merchants que todavía no usan Envío Nube cuando intentan agregar un
             medio de envío o configuran un envío personalizado.
           </p>
           <dl className="meta">
@@ -188,7 +188,7 @@ export default function Home() {
 
             <div className="card">
               <h3>Días desde la primera view hasta activar</h3>
-              <p className="muted small">Mediana: {A.medianDays.toLocaleString('es-AR')} días (trigger 1: {t1.medianDays}, trigger 2: {t2.medianDays}).</p>
+              <p className="muted small">Mediana: {A.medianDays.toLocaleString('es-AR')} días.</p>
               <Bars items={days} max={Math.max(...A.days)} />
             </div>
           </div>
