@@ -8,6 +8,11 @@ const T = [
     campana: 'Generación de etiquetas',
     contexto: 'Aparece al entrar a Configuración, Medios de envío, para quien suma un medio de envío.',
     mensaje: 'Menos tiempo en logística, más tiempo para vender',
+    id: 'comunicacion-medio-de-envio',
+    imagen: '/previews/medio-de-envio.png',
+    ancho: 517,
+    alto: 732,
+    alt: 'Vista previa del in-app “Menos tiempo en logística, más tiempo para vender”, con los botones Activar Envío Nube y Conocer más.',
   },
   {
     d: data.t2,
@@ -15,8 +20,16 @@ const T = [
     campana: 'Opciones de envío',
     contexto: 'Aparece al entrar a Envío personalizado, para quien configura sus propias tarifas.',
     mensaje: 'Más opciones de envío, más conversiones',
+    id: 'comunicacion-envio-personalizado',
+    imagen: '/previews/envio-personalizado.png',
+    ancho: 537,
+    alto: 646,
+    alt: 'Vista previa del in-app del trigger “Agregar envío personalizado”, con los botones Activar Envío Nube y Conocer más.',
   },
 ];
+
+// Abre el <dialog> del botón "Ver comunicación" y lo cierra al tocar el fondo. Escape y foco los resuelve el navegador.
+const DIALOG_SCRIPT = `document.addEventListener('click',function(e){var b=e.target.closest('[data-dialog]');if(b){var d=document.getElementById(b.getAttribute('data-dialog'));if(d&&d.showModal){d.showModal();}return;}if(e.target.tagName==='DIALOG'){e.target.close();}});`;
 
 const clicks = (d) => d.clicksActivar + d.clicksConocer;
 
@@ -46,7 +59,29 @@ function TriggerCard({ t }) {
   const d = t.d;
   return (
     <article className="card trigger">
-      <h3>{t.nombre}</h3>
+      <div className="trigger-head">
+        <h3>{t.nombre}</h3>
+        <button type="button" className="btn-preview" data-dialog={t.id}>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <path d="M12 5C6.5 5 2.7 9.2 1.5 12c1.2 2.8 5 7 10.5 7s9.3-4.2 10.5-7C21.3 9.2 17.5 5 12 5Zm0 11.2A4.2 4.2 0 1 1 12 7.8a4.2 4.2 0 0 1 0 8.4Zm0-6.4a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4Z" fill="currentColor" />
+          </svg>
+          Ver comunicación
+        </button>
+      </div>
+      <dialog id={t.id} className="preview-dialog" aria-label={`Comunicación: ${t.nombre}`}>
+        <div className="preview-body">
+          <div className="preview-head">
+            <div>
+              <strong>{t.nombre}</strong>
+              <span className="muted small">Así ve el merchant el in-app</span>
+            </div>
+            <form method="dialog">
+              <button className="btn-close" aria-label="Cerrar la vista previa">×</button>
+            </form>
+          </div>
+          <img src={t.imagen} width={t.ancho} height={t.alto} alt={t.alt} loading="lazy" />
+        </div>
+      </dialog>
       <p className="muted small">Campaña “{t.campana}”. {t.contexto}</p>
       <p className="quote">“{t.mensaje}”</p>
       <dl className="rows">
@@ -270,6 +305,7 @@ export default function Home() {
           Lifecycle AR, Envío Nube. Datos de Userflow y Databricks (NuvemLens). Corte: {meta.corte}.
         </div>
       </footer>
+      <script dangerouslySetInnerHTML={{ __html: DIALOG_SCRIPT }} />
     </main>
   );
 }
