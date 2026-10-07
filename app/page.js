@@ -52,7 +52,7 @@ function TriggerCard({ t }) {
       <dl className="rows">
         <Row k="Views totales" v={n(d.views)} sub="sesiones del in-app" />
         <Row k="Views únicas" v={n(d.uniqueViews)} sub="usuarios únicos" />
-        <Row k="Clics en Activar Envío Nube" v={n(d.clicksActivar)} sub={`${pct(d.clicksActivar, d.views)} de las views · ${n(d.merchClickActivar)} merchants`} />
+        <Row k="Clics en Activar" v={n(d.clicksActivar)} sub={`${pct(d.clicksActivar, d.views)} de las views · ${n(d.merchClickActivar)} merchants`} />
         <Row k="Clics en Conocer más" v={n(d.clicksConocer)} sub={`${pct(d.clicksConocer, d.views)} de las views · ${n(d.merchClickConocer)} merchants`} />
         <Row k="CTR" v={pct(clicks(d), d.views)} sub={`${n(clicks(d))} clics / ${n(d.views)} views`} />
         <Row k="Merchants únicos impactados" v={n(d.merchants)} sub="Store IDs únicos" />
@@ -123,7 +123,7 @@ export default function Home() {
           <div className="kpis">
             <Kpi label="Views totales" value={n(A.views)} sub="Sesiones de los dos in-app" />
             <Kpi label="Views únicas" value={n(A.uniqueViews)} sub={`Usuarios únicos, sin contar ${n(data.overlap.users)} que vieron ambos`} />
-            <Kpi label="Clics en Activar Envío Nube" value={n(A.clicksActivar)} sub={`${pct(A.clicksActivar, A.views)} de las views`} />
+            <Kpi label="Clics en Activar" value={n(A.clicksActivar)} sub={`${pct(A.clicksActivar, A.views)} de las views`} />
             <Kpi label="Clics en Conocer más" value={n(A.clicksConocer)} sub={`${pct(A.clicksConocer, A.views)} de las views`} />
             <Kpi label="CTR" value={pct(clicks(A), A.views)} sub={`${n(clicks(A))} clics en Activar o Conocer más / views totales`} />
             <Kpi label="Merchants únicos impactados" value={n(A.merchants)} sub={`Store IDs únicos. ${n(data.overlap.merchants)} vieron ambos triggers`} />
@@ -253,7 +253,7 @@ export default function Home() {
           <h2>Metodología</h2>
           <ul className="method">
             <li><strong>Canal:</strong> views, views únicas y clics salen de la API de Userflow para los flows “Trigger x Comportamiento - Generación de etiquetas” y “Trigger x Comportamiento - Opciones de envío”, desde el {meta.activacion} hasta el {meta.corte}. Views totales = sesiones; views únicas = usuarios únicos; el clic en cada botón es un evento propio. Cada sesión termina con a lo sumo un clic.</li>
-            <li><strong>CTR:</strong> clics en Activar Envío Nube o Conocer más / views totales. Los CTR por botón usan el mismo denominador.</li>
+            <li><strong>CTR:</strong> clics en Activar o Conocer más / views totales. Los CTR por botón usan el mismo denominador.</li>
             <li><strong>Cruce:</strong> el export de sesiones de Userflow ({n(data.export.sessionsT1)} y {n(data.export.sessionsT2)} sesiones, corte {meta.corteHora}) se cruza por Store ID (columna Company: ID) con la tabla de envíos de Argentina en Databricks (NuvemLens).</li>
             <li><strong>Envío Nube previo:</strong> merchant con una etiqueta de Envío Nube, o con un pedido pagado donde el comprador eligió Envío Nube en el checkout, anterior al día de su primera view. Para el consolidado se usa la primera view de cualquiera de los dos triggers.</li>
             <li><strong>Atribución:</strong> una conversión se atribuye a una sola comunicación: la última que el merchant visualizó hasta el día de su activación (inclusive). Los {n(data.attribution.duplicated)} merchants que vieron ambos triggers antes de activar se asignan por la view más reciente; así las conversiones y los paquetes por trigger suman el consolidado. El CVR de cada trigger usa como denominador todos los merchants sin Envío Nube previo que lo vieron, aunque también hayan visto el otro; por eso las bases por trigger no suman la base consolidada.</li>
