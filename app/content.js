@@ -3,194 +3,197 @@
 export const meta = {
   responsable: 'Alan Lelli',
   activacion: '26 ago 2026',
-  corte: '7 oct 2026',
-  corteHora: '12:50 UTC',
+  corte: '31 oct 2026',
   criterio: 'Primera señal de uso de Envío Nube: pedido con Envío Nube elegido en el checkout o primera etiqueta',
 };
 
 export const data = {
  "t1": {
-  "merchants": 9348,
-  "priorLabel": 1215,
-  "priorSel": 185,
-  "prior": 1400,
-  "base": 7948,
-  "conv": 431,
-  "baseClick": 4532,
-  "convClick": 255,
-  "baseNoClick": 3416,
-  "convNoClick": 176,
-  "convWithLabel": 309,
-  "convSelOnly": 122,
-  "packages": 3748,
-  "shippers": 288,
+  "merchants": 13851,
+  "priorLabel": 1765,
+  "priorSel": 270,
+  "prior": 2035,
+  "base": 11816,
+  "conv": 865,
+  "baseClick": 6836,
+  "convClick": 518,
+  "baseNoClick": 4980,
+  "convNoClick": 347,
+  "convWithLabel": 704,
+  "convSelOnly": 161,
+  "packages": 10218,
+  "shippers": 624,
   "pkgMedianShipper": 2.0,
-  "pkgTop1": 862,
-  "pkgTop10": 2348,
+  "pkgTop1": 1011,
+  "pkgTop10": 5021,
   "days": [
-   79,
-   38,
-   64,
-   71,
-   72,
-   107
+   109,
+   63,
+   91,
+   112,
+   139,
+   351
   ],
-  "medianDays": 6.0,
+  "medianDays": 10.0,
   "ages": [
    {
     "label": "0 a 6 días",
-    "base": 1003,
-    "conv": 22
+    "base": 1109,
+    "conv": 21
    },
    {
     "label": "7 a 13 días",
-    "base": 1383,
-    "conv": 60
+    "base": 1013,
+    "conv": 50
    },
    {
     "label": "14 a 27 días",
-    "base": 2477,
-    "conv": 126
+    "base": 2229,
+    "conv": 125
    },
    {
     "label": "28 días o más",
-    "base": 3085,
-    "conv": 223
+    "base": 7465,
+    "conv": 669
    }
   ],
-  "views": 9731,
-  "uniqueViews": 9465,
-  "clicksActivar": 2867,
-  "clicksConocer": 2489,
-  "merchClickActivar": 2820,
-  "merchClickConocer": 2452
+  "views": 14697,
+  "uniqueViews": 14000,
+  "clicksActivar": 4304,
+  "clicksConocer": 3802,
+  "merchClickActivar": 4206,
+  "merchClickConocer": 3719
  },
  "t2": {
-  "merchants": 4439,
-  "priorLabel": 1110,
-  "priorSel": 146,
-  "prior": 1256,
-  "base": 3183,
-  "conv": 291,
-  "baseClick": 893,
-  "convClick": 116,
-  "baseNoClick": 2290,
-  "convNoClick": 175,
-  "convWithLabel": 219,
-  "convSelOnly": 72,
-  "packages": 1524,
-  "shippers": 203,
-  "pkgMedianShipper": 2.0,
-  "pkgTop1": 160,
-  "pkgTop10": 775,
+  "merchants": 6736,
+  "priorLabel": 1712,
+  "priorSel": 217,
+  "prior": 1929,
+  "base": 4807,
+  "conv": 530,
+  "baseClick": 1348,
+  "convClick": 197,
+  "baseNoClick": 3459,
+  "convNoClick": 333,
+  "convWithLabel": 435,
+  "convSelOnly": 95,
+  "packages": 6012,
+  "shippers": 396,
+  "pkgMedianShipper": 3.0,
+  "pkgTop1": 849,
+  "pkgTop10": 2528,
   "days": [
+   72,
+   50,
    49,
-   29,
-   33,
-   59,
-   51,
-   70
+   78,
+   82,
+   199
   ],
-  "medianDays": 6.0,
+  "medianDays": 9.0,
   "ages": [
    {
     "label": "0 a 6 días",
-    "base": 460,
-    "conv": 18
+    "base": 467,
+    "conv": 12
    },
    {
     "label": "7 a 13 días",
-    "base": 495,
-    "conv": 37
+    "base": 407,
+    "conv": 20
    },
    {
     "label": "14 a 27 días",
-    "base": 972,
-    "conv": 80
+    "base": 963,
+    "conv": 93
    },
    {
     "label": "28 días o más",
-    "base": 1255,
-    "conv": 156
+    "base": 2970,
+    "conv": 405
    }
   ],
-  "views": 4669,
-  "uniqueViews": 4502,
-  "clicksActivar": 711,
-  "clicksConocer": 523,
-  "merchClickActivar": 700,
-  "merchClickConocer": 515
+  "views": 7300,
+  "uniqueViews": 6826,
+  "clicksActivar": 1088,
+  "clicksConocer": 797,
+  "merchClickActivar": 1062,
+  "merchClickConocer": 782
  },
  "all": {
-  "merchants": 12337,
-  "priorLabel": 2035,
-  "priorSel": 290,
-  "prior": 2325,
-  "base": 10012,
-  "conv": 722,
-  "baseClick": 5198,
-  "convClick": 414,
-  "baseNoClick": 4814,
-  "convNoClick": 308,
-  "convWithLabel": 528,
-  "convSelOnly": 194,
-  "packages": 5272,
-  "shippers": 491,
+  "merchants": 18202,
+  "priorLabel": 2958,
+  "priorSel": 406,
+  "prior": 3364,
+  "base": 14838,
+  "conv": 1395,
+  "baseClick": 7819,
+  "convClick": 813,
+  "baseNoClick": 7019,
+  "convNoClick": 582,
+  "convWithLabel": 1139,
+  "convSelOnly": 256,
+  "packages": 16230,
+  "shippers": 1020,
   "pkgMedianShipper": 2.0,
-  "pkgTop1": 862,
-  "pkgTop10": 2567,
+  "pkgTop1": 1011,
+  "pkgTop10": 5853,
   "days": [
-   106,
-   59,
-   98,
-   129,
-   137,
-   193
+   152,
+   99,
+   141,
+   179,
+   239,
+   585
   ],
-  "medianDays": 6.0,
+  "medianDays": 11.0,
   "ages": [
    {
     "label": "0 a 6 días",
-    "base": 1279,
-    "conv": 34
+    "base": 1376,
+    "conv": 31
    },
    {
     "label": "7 a 13 días",
-    "base": 1674,
-    "conv": 91
+    "base": 1244,
+    "conv": 66
    },
    {
     "label": "14 a 27 días",
-    "base": 3066,
-    "conv": 194
+    "base": 2820,
+    "conv": 195
    },
    {
     "label": "28 días o más",
-    "base": 3992,
-    "conv": 403
+    "base": 9398,
+    "conv": 1103
    }
   ],
-  "views": 14400,
-  "uniqueViews": 12542,
-  "clicksActivar": 3578,
-  "clicksConocer": 3012
+  "views": 21997,
+  "uniqueViews": 18485,
+  "clicksActivar": 5392,
+  "clicksConocer": 4599
  },
  "attribution": {
-  "duplicated": 146,
-  "toT1": 48,
-  "toT2": 98
+  "duplicated": 292,
+  "toT1": 97,
+  "toT2": 195
  },
  "overlap": {
-  "users": 1425,
-  "merchants": 1450
+  "users": 2341,
+  "merchants": 2385
  },
  "export": {
-  "sessionsT1": 9707,
-  "sessionsT2": 4656,
-  "usersT1": 9443,
-  "usersT2": 4490,
-  "merchantsT1": 9348,
-  "merchantsT2": 4439
+  "sessionsT1": 14697,
+  "sessionsT2": 7300,
+  "usersT1": 14000,
+  "usersT2": 6826,
+  "merchantsT1": 13851,
+  "merchantsT2": 6736
+ },
+ "api": {
+  "merchantsT1": 13877,
+  "merchantsT2": 6763
  }
 };
 
